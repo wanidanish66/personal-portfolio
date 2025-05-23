@@ -36,43 +36,5 @@
     top: 0;
 }
 .style-switcher .day-night{
-    top: 50px;
-}
-.style-switcher h4{
-    margin: 0 0 10px;
-    color: var(--text-black-700);
-    font-size: 16px;
-    font-weight: 600;
-    text-transform: capitalize;
-}
-.style-switcher .colors{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-.style-switcher .colors span{
-    display: inline-block;
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-}
-.style-switcher .personalPortfolio1{
-    background-color: #fa5b0f;
-
-}
-.style-switcher .PersonalPort2{
-    background-color: #ec1839;
-
-}
-.style-switcher .portfolioPort3{
-    background-color:#37b187 ;
-
-}
-.style-switcher .portfolioPort4{
-    background-color:#1854b4 ;
-
-}
-.style-switcher .portfolioPort5{
-    background-color:#f021b2 ;
-
+    top: 10px;
 }

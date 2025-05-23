@@ -527,20 +527,10 @@
     
     <!-- style switcher start -->
     <div class="style-switcher">
-        <div class="style-switcher-toggler s-icon">
-            <i class="fas fa-cog fa-spin"></i>
-        </div>
         <div class="day-night s-icon">
             <i class="fas fa-moon"></i>
         </div>
-        <h4>Theme Colors</h4>
-        <div class="colors">
-            <span class="personalPortfolio1" onclick="setActiveStyle('personalPortfolio1')"></span>
-            <span class="PersonalPort2" onclick="setActiveStyle('PersonalPort2')"></span>
-            <span class="portfolioPort3" onclick="setActiveStyle('portfolioPort3')"></span>
-            <span class="portfolioPort4" onclick="setActiveStyle('portfolioPort4')"></span>
-            <span class="portfolioPort5" onclick="setActiveStyle('portfolioPort5')"></span>
-        </div>
+        
     </div>
     <!-- style switcher end -->
     
@@ -576,13 +566,7 @@
                 loop: true
             });
             
-            // Style switcher functionality
-            const styleSwitcherToggler = document.querySelector('.style-switcher-toggler');
-            const styleSwitcher = document.querySelector('.style-switcher');
-            
-            styleSwitcherToggler.addEventListener('click', function() {
-                styleSwitcher.classList.toggle('open');
-            });
+           
             
             // Day night toggle
             const dayNight = document.querySelector('.day-night');
