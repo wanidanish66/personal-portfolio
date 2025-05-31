@@ -277,7 +277,7 @@ h3.my-profession{
     border-top: 10px solid var(--skin-color);
     border-left:  10px solid var(--skin-color);
     left: -10px;
-    top: -10px;
+    top: -30px;
 }
 .home-img::after{
     content: '';
@@ -287,11 +287,12 @@ h3.my-profession{
     border-bottom: 10px solid var(--skin-color);
     border-right:  10px solid var(--skin-color);
     right: 10px;
-    bottom: -2px;
+    bottom: -30px;
 }
 .home .home-img img{
+    
     height: 300px;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 /* about=======================================y==================================================== */
 .about .about-content{
