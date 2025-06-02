@@ -954,3 +954,16 @@ h3.my-profession{
   color: #fff;
   cursor: pointer;
 }
+
+body.dark .aside,
+body.dark .aside .nav-toggler {
+    background-color: var(--bg-black-100) !important;
+}
+
+body.dark .aside .nav li a {
+    color: var(--text-black-900) !important;
+    border-bottom: 1px solid var(--bg-black-50);
+}
+body.dark .nav-toggler span {
+    background: var(--skin-color);
+}
