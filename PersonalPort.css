@@ -920,3 +920,37 @@ h3.my-profession{
     border-radius: 2px;
   }
 }
+
+/* Lightbox Overlay */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #fff;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+}
