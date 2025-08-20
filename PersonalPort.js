@@ -1,5 +1,4 @@
 
-
 var typed = new Typed (".typing",{
     strings:["Web Designer","Developer","programer","fast learner"],
     typeSpeed:100,
