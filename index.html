@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="portfolioPort5.css" class="alternate-style" title="portfolioPort5" disabled>
     <link rel="stylesheet" href="style-switcher.css">
     <link rel="stylesheet" href="style 01.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 
 </head>
 
@@ -117,7 +119,7 @@
                                     <div class="row">
                                         <div class="buttons padd-15">
                                             <a id="download-btn" href="Software Developer Resume.pdf"
-                                                download="Software Developer Resume.pdf" class="btn bot">Download CV</a>
+                                                download="Software Developer Resume.pdf" class="btn bot" target="_blank" rel="noopener noreferrer">Download CV</a>
                                             <a href="#contact" class="btn hire-me">Hire Me</a>
                                         </div>
                                     </div>
@@ -125,14 +127,21 @@
                                 <div class="skill padd-15 col-12 col-md-6">
                                     <div class="row">
                                         <div class="skill-item col-6 col-sm-12 padd-15">
-                                            <h5>JS</h5>
+                                            <h5>JAVA</h5>
                                             <div class="progress">
                                                 <div class="progress-in" style="width:55%;"></div>
                                                 <div class="skill-percent">55%</div>
                                             </div>
                                         </div>
                                         <div class="skill-item col-6 col-sm-12 padd-15">
-                                            <h5>Python</h5>
+                                            <h5>PYTHON</h5>
+                                            <div class="progress">
+                                                <div class="progress-in" style="width: 76%;"></div>
+                                                <div class="skill-percent">76%</div>
+                                            </div>
+                                        </div>
+                                        <div class="skill-item col-6 col-sm-12 padd-15">
+                                            <h5>JavaScript</h5>
                                             <div class="progress">
                                                 <div class="progress-in" style="width: 76%;"></div>
                                                 <div class="skill-percent">76%</div>
@@ -537,6 +546,60 @@
             <!-- contact section end-->
         </div>
         <!-- main content end -->
+         <!--footer section-->
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- About -->
+    <div class="footer-box fade-in">
+      <h3>Danish Wani</h3>
+      <p>
+        Frontend Developer focused on building clean, responsive, and
+        user-friendly web interfaces using modern web technologies.
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-box fade-in">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#home"><i class="fas fa-angle-right"></i> Home</a></li>
+        <li><a href="#about"><i class="fas fa-angle-right"></i> About</a></li>
+        <li><a href="#portfolio"><i class="fas fa-angle-right"></i> Projects</a></li>
+        <li><a href="#contact"><i class="fas fa-angle-right"></i> Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Social -->
+    <div class="footer-box fade-in">
+      <h4>Follow Me</h4>
+      <div class="social-icons">
+        <a href="https://github.com/wanidanish66" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/" target="_blank">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://twitter.com/" target="_blank">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-box fade-in">
+      <h4>Contact</h4>
+      <p><i class="fas fa-envelope"></i> xaidwani89@gmail.com</p>
+      <p><i class="fas fa-location-dot"></i> India</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Danish Wani | All Rights Reserved</p>
+  </div>
+</footer>
+        <!-- footer section end-->
     </div>
     <!-- main container end -->
 
@@ -619,6 +682,32 @@
         });
 
     </script>
+
+<!-- Back to Top Button -->
+<button id="backToTop"><i class="fas fa-arrow-up"></i></button>
+
+
+
+<script>
+const aside = document.querySelector('.aside');
+const footer = document.querySelector('.footer');
+const mainContent = document.querySelector('.main-content');
+
+window.addEventListener('scroll', () => {
+    const asideHeight = aside.offsetHeight;
+    const footerOffsetTop = footer.offsetTop;
+    const scrollTop = window.scrollY;
+
+    // distance from top where aside should stop
+    const stopPoint = footerOffsetTop - asideHeight;
+
+    if (scrollTop >= stopPoint) {
+        aside.classList.add('stop');
+    } else {
+        aside.classList.remove('stop');
+    }
+});
+</script>
 
 
 </body>

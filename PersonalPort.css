@@ -140,7 +140,8 @@ ul {
     background-color: var(--bg-black-100);
     position: fixed;
     left: 0;
-    top: 0;
+    top: auto;
+    bottom: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -149,7 +150,12 @@ ul {
     border-right: 1px solid var(--bg-black-50);
     z-index: 10;
 }
-
+/* When footer is reached */
+.aside.stop {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+}
 .aside .logo {
     position: absolute;
     top: 50px;
@@ -198,7 +204,7 @@ ul {
     width: 45px;
     border: 1px solid var(--bg-black-50);
     cursor: pointer;
-    position: fixed;
+    position: sticky;
     left: 300px;
     top: 20px;
     border-radius: 5px;
@@ -1083,4 +1089,115 @@ body.dark .aside .nav li a {
 
 body.dark .nav-toggler span {
     background: var(--skin-color);
+}
+
+/*footer*/
+
+.footer {
+  background: linear-gradient(135deg, #020617, #0f172a);
+  color: #e5e7eb;
+  padding: 70px 20px 20px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 40px;
+}
+
+.footer-box h3,
+.footer-box h4 {
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.footer-box p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #cbd5f5;
+}
+
+.footer-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-box ul li {
+  margin-bottom: 10px;
+}
+
+.footer-box ul li a {
+  color: #cbd5f5;
+  font-size: 14px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-box ul li a i {
+  margin-right: 6px;
+}
+
+.footer-box ul li a:hover {
+  color: #38bdf8;
+  padding-left: 5px;
+}
+
+.social-icons a {
+  font-size: 20px;
+  margin-right: 15px;
+  color: #cbd5f5;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: #38bdf8;
+  transform: translateY(-4px);
+}
+
+.footer-bottom {
+  margin-top: 40px;
+  border-top: 1px solid #1e293b;
+  padding-top: 15px;
+  text-align: center;
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+/* Fade-in animation */
+.fade-in {
+  animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Back To Top Button */
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 25px;
+  background: #38bdf8;
+  color: #020617;
+  border: none;
+  padding: 12px 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  display: none;
+  z-index: 999;
+  transition: 0.3s;
+}
+
+#backToTop:hover {
+  background: #0ea5e9;
 }
