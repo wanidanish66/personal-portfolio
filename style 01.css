@@ -229,10 +229,9 @@
     width: 46px;
     height: 46px;
 
-    background: color-mix(in srgb, var(--skin-color) 75%, transparent);
-    backdrop-filter: blur(8px);
+    background: transparent;              
+    border: 1.5px solid var(--skin-color);
 
-    border: 1px solid color-mix(in srgb, var(--skin-color) 55%, transparent);
     border-radius: 14px;
 
     color: var(--skin-color);
@@ -244,48 +243,33 @@
     cursor: pointer;
     z-index: 1000;
 
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
-    transition: all 0.3s ease;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
 }
 
+/* underline */
 #backToTop::before {
     content: "";
     position: absolute;
-    top: 12px;              /* exact optical center */
-    width: 18px;
-    height: 1.5px;
-    border: 2px solid currentColor;
-    background: currentColor;
-    opacity: 0.5;
+    top: 12px;
 
+    width: 13px;
+    height: 2px;
+
+    background: currentColor;
+    opacity: 0.8;
     border-radius: 2px;
 }
 
+/* alighment */
 #backToTop i {
     position: relative;
-    top: 6px;               /* precise spacing below the line */
-    font-size: 25px;
+    top: 6px;
+    font-size: 15px;
 }
 
 #backToTop:hover {
     transform: translateY(-3px);
-    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.28);
-}
-
-@media (max-width: 576px) {
-    #backToTop {
-        width: 40px;
-        height: 40px;
-        border-radius: 12px;
-    }
-
-    #backToTop::before {
-        width: 14px;
-        top: 11px;
-    }
-
-    #backToTop i {
-        top: 5px;
-        font-size: 14px;
-    }
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+    opacity: 0.95;
 }
