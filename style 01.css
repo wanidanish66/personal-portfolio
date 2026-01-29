@@ -218,3 +218,74 @@
         textarea.form-control {
             min-height: 15rem;
         }
+
+/* Back to Top Button */
+
+#backToTop {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+
+    width: 46px;
+    height: 46px;
+
+    background: color-mix(in srgb, var(--skin-color) 75%, transparent);
+    backdrop-filter: blur(8px);
+
+    border: 1px solid color-mix(in srgb, var(--skin-color) 55%, transparent);
+    border-radius: 14px;
+
+    color: var(--skin-color);
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    z-index: 1000;
+
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+    transition: all 0.3s ease;
+}
+
+#backToTop::before {
+    content: "";
+    position: absolute;
+    top: 12px;              /* exact optical center */
+    width: 18px;
+    height: 1.5px;
+    border: 2px solid currentColor;
+    background: currentColor;
+    opacity: 0.5;
+
+    border-radius: 2px;
+}
+
+#backToTop i {
+    position: relative;
+    top: 6px;               /* precise spacing below the line */
+    font-size: 25px;
+}
+
+#backToTop:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.28);
+}
+
+@media (max-width: 576px) {
+    #backToTop {
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+    }
+
+    #backToTop::before {
+        width: 14px;
+        top: 11px;
+    }
+
+    #backToTop i {
+        top: 5px;
+        font-size: 14px;
+    }
+}

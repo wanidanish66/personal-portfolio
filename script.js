@@ -1,27 +1,31 @@
- document.addEventListener('DOMContentLoaded', function () {
-            const navToggler = document.querySelector('.nav-toggler');
-            const aside = document.querySelector('.aside');
-            const mainContent = document.querySelector('.main-content');
+document.addEventListener("DOMContentLoaded", () => {
 
-            navToggler.style.display = 'flex';
+    /* ================= NAV TOGGLER ================= */
+    const navToggler = document.querySelector(".nav-toggler");
+    const aside = document.querySelector(".aside");
+    const mainContent = document.querySelector(".main-content");
 
-            navToggler.addEventListener('click', function () {
-                this.classList.toggle('active');
-                aside.classList.toggle('active');
-                mainContent.classList.toggle('active');
-            });
+    navToggler.style.display = "flex";
 
-            const navLinks = document.querySelectorAll('.nav a');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function () {
-                    if (window.innerWidth < 992) {
-                        navToggler.classList.remove('active');
-                        aside.classList.remove('active');
-                        mainContent.classList.remove('active');
-                    }
-                });
-            });
+    navToggler.addEventListener("click", () => {
+        navToggler.classList.toggle("active");
+        aside.classList.toggle("active");
+        mainContent.classList.toggle("active");
+    });
 
+    document.querySelectorAll(".nav a").forEach(link => {
+        link.addEventListener("click", () => {
+            if (window.innerWidth < 992) {
+                navToggler.classList.remove("active");
+                aside.classList.remove("active");
+                mainContent.classList.remove("active");
+            }
+        });
+    });
+
+
+
+            // Typing animation
             new Typed('.typing', {
                 strings: ['Web Developer', 'Python Developer', 'UI/UX Designer', 'Freelancer'],
                 typeSpeed: 100,
@@ -29,6 +33,8 @@
                 loop: true
             });
 
+
+            // dark and light mode toggle
             const dayNight = document.querySelector('.day-night');
             dayNight.addEventListener('click', function () {
                 this.querySelector('i').classList.toggle('fa-sun');
@@ -58,7 +64,7 @@
             }
         });
 
-        // Back to Top Button
+        // Sticky Aside on Scroll
         const aside = document.querySelector('.aside');
         const footer = document.querySelector('.footer');
         const mainContent = document.querySelector('.main-content');
@@ -77,3 +83,21 @@
                 aside.classList.remove('stop');
             }
         });
+
+        // Back to Top Button
+const backToTop = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+        backToTop.style.display = "block";
+    } else {
+        backToTop.style.display = "none";
+    }
+});
+
+backToTop.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
