@@ -1,49 +1,75 @@
+/* Base responsive styles */
+:root {
+    --mobile-breakpoint: 768px;
+    --tablet-breakpoint: 992px;
+}
 
-    
-        /* Base responsive styles */
-        :root {
-            --mobile-breakpoint: 768px;
-            --tablet-breakpoint: 992px;
-        }
-        
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        
-        html {
-            font-size: 62.5%; /* 1rem = 10px for easier calculations */
-            scroll-behavior: smooth;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-        
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        /* Responsive typography */
-        h1 { font-size: 2.8rem; }
-        h2 { font-size: 2.4rem; }
-        h3 { font-size: 2.0rem; }
-        h4 { font-size: 1.8rem; }
-        p, a, li { font-size: 1.6rem; }
-        
-        @media (max-width: 768px) {
-            h1 { font-size: 2.4rem; }
-            h2 { font-size: 2.0rem; }
-            h3 { font-size: 1.8rem; }
-            h4 { font-size: 1.6rem; }
-        }
-        
-         /* Glassmorphism Nav Toggler */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    /* 1rem = 10px for easier calculations */
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Responsive typography */
+h1 {
+    font-size: 2.8rem;
+}
+
+h2 {
+    font-size: 2.4rem;
+}
+
+h3 {
+    font-size: 2.0rem;
+}
+
+h4 {
+    font-size: 1.8rem;
+}
+
+p,
+a,
+li {
+    font-size: 1.6rem;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.4rem;
+    }
+
+    h2 {
+        font-size: 2.0rem;
+    }
+
+    h3 {
+        font-size: 1.8rem;
+    }
+
+    h4 {
+        font-size: 1.6rem;
+    }
+}
+
+/* Glassmorphism Nav Toggler */
 .nav-toggler {
     position: fixed;
     top: 20px;
@@ -72,7 +98,7 @@
 
 .nav-toggler:hover {
     transform: scale(1.05);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
 }
 
 .nav-toggler span {
@@ -84,155 +110,260 @@
 }
 
 
-        /* Mobile nav styles */
-        @media (max-width: 992px) {
-            .aside {
-                transform: translateX(-100%);
-                transition: transform 0.3s ease;
-                position: fixed;
-                z-index: 999;
-                background: #fff;
-                height: 100vh;
-                width: 70%;
-                max-width: 30rem;
-            }
-            
-            .aside.active {
-                transform: translateX(0);
-            }
-            
-            .nav-toggler.active span:nth-child(1) {
-                transform: rotate(45deg) translate(0.5rem, 0.5rem);
-            }
-            
-            .nav-toggler.active span:nth-child(2) {
-                opacity: 0;
-            }
-            
-            .nav-toggler.active span:nth-child(3) {
-                transform: rotate(-45deg) translate(0.5rem, -0.5rem);
-            }
-            
-            .main-content {
-                margin-left: 0;
-                width: 100%;
-            }
-        }
-        
-        /* Grid system */
-        .container {
-            width: 100%;
-            padding: 0 1.5rem;
-            margin: 0 auto;
-        }
-        
-        .row {
-            display: flex;
-            flex-wrap: wrap;
-            margin: 0 -1.5rem;
-        }
-        
-        [class*="col-"] {
-            padding: 0 1.5rem;
-        }
-        
-        .col-1 { width: 8.33%; }
-        .col-2 { width: 16.66%; }
-        .col-3 { width: 25%; }
-        .col-4 { width: 33.33%; }
-        .col-5 { width: 41.66%; }
-        .col-6 { width: 50%; }
-        .col-7 { width: 58.33%; }
-        .col-8 { width: 66.66%; }
-        .col-9 { width: 75%; }
-        .col-10 { width: 83.33%; }
-        .col-11 { width: 91.66%; }
-        .col-12 { width: 100%; }
-        
-        @media (max-width: 768px) {
-            .col-sm-1 { width: 8.33%; }
-            .col-sm-2 { width: 16.66%; }
-            .col-sm-3 { width: 25%; }
-            .col-sm-4 { width: 33.33%; }
-            .col-sm-5 { width: 41.66%; }
-            .col-sm-6 { width: 50%; }
-            .col-sm-7 { width: 58.33%; }
-            .col-sm-8 { width: 66.66%; }
-            .col-sm-9 { width: 75%; }
-            .col-sm-10 { width: 83.33%; }
-            .col-sm-11 { width: 91.66%; }
-            .col-sm-12 { width: 100%; }
-        }
-        
-        @media (max-width: 576px) {
-            .col-xs-1 { width: 8.33%; }
-            .col-xs-2 { width: 16.66%; }
-            .col-xs-3 { width: 25%; }
-            .col-xs-4 { width: 33.33%; }
-            .col-xs-5 { width: 41.66%; }
-            .col-xs-6 { width: 50%; }
-            .col-xs-7 { width: 58.33%; }
-            .col-xs-8 { width: 66.66%; }
-            .col-xs-9 { width: 75%; }
-            .col-xs-10 { width: 83.33%; }
-            .col-xs-11 { width: 91.66%; }
-            .col-xs-12 { width: 100%; }
-        }
-        
-        /* Button enhancements */
-        .btn {
-            display: inline-block;
-            padding: 1rem 2rem;
-            font-size: 1.6rem;
-            border-radius: 0.5rem;
-            transition: all 0.3s ease;
-            text-align: center;
-            white-space: nowrap;
-        }
-        
-        @media (max-width: 576px) {
-            .btn {
-                padding: 0.8rem 1.5rem;
-                font-size: 1.4rem;
-                display: block;
-                width: 100%;
-                margin-bottom: 1rem;
-            }
-        }
-        
-        /* Portfolio items */
-        .portfolio-item {
-            padding: 1.5rem;
-        }
-        
-        @media (max-width: 768px) {
-            .portfolio-item {
-                width: 50%;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .portfolio-item {
-                width: 100%;
-            }
-        }
-        
-        /* Form adjustments */
-        .contact-form .form-item {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 1rem;
-            font-size: 1.6rem;
-            border-radius: 0.5rem;
-            border: 1px solid #ddd;
-        }
-        
-        textarea.form-control {
-            min-height: 15rem;
-        }
+/* Mobile nav styles */
+@media (max-width: 992px) {
+    .aside {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        position: fixed;
+        z-index: 999;
+        background: #fff;
+        height: 100vh;
+        width: 70%;
+        max-width: 30rem;
+    }
+
+    .aside.active {
+        transform: translateX(0);
+    }
+
+    .nav-toggler.active span:nth-child(1) {
+        transform: rotate(45deg) translate(0.5rem, 0.5rem);
+    }
+
+    .nav-toggler.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-toggler.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(0.5rem, -0.5rem);
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+/* Grid system */
+.container {
+    width: 100%;
+    padding: 0 1.5rem;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -1.5rem;
+}
+
+[class*="col-"] {
+    padding: 0 1.5rem;
+}
+
+.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.33%;
+}
+
+.col-11 {
+    width: 91.66%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .col-sm-1 {
+        width: 8.33%;
+    }
+
+    .col-sm-2 {
+        width: 16.66%;
+    }
+
+    .col-sm-3 {
+        width: 25%;
+    }
+
+    .col-sm-4 {
+        width: 33.33%;
+    }
+
+    .col-sm-5 {
+        width: 41.66%;
+    }
+
+    .col-sm-6 {
+        width: 50%;
+    }
+
+    .col-sm-7 {
+        width: 58.33%;
+    }
+
+    .col-sm-8 {
+        width: 66.66%;
+    }
+
+    .col-sm-9 {
+        width: 75%;
+    }
+
+    .col-sm-10 {
+        width: 83.33%;
+    }
+
+    .col-sm-11 {
+        width: 91.66%;
+    }
+
+    .col-sm-12 {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .col-xs-1 {
+        width: 8.33%;
+    }
+
+    .col-xs-2 {
+        width: 16.66%;
+    }
+
+    .col-xs-3 {
+        width: 25%;
+    }
+
+    .col-xs-4 {
+        width: 33.33%;
+    }
+
+    .col-xs-5 {
+        width: 41.66%;
+    }
+
+    .col-xs-6 {
+        width: 50%;
+    }
+
+    .col-xs-7 {
+        width: 58.33%;
+    }
+
+    .col-xs-8 {
+        width: 66.66%;
+    }
+
+    .col-xs-9 {
+        width: 75%;
+    }
+
+    .col-xs-10 {
+        width: 83.33%;
+    }
+
+    .col-xs-11 {
+        width: 91.66%;
+    }
+
+    .col-xs-12 {
+        width: 100%;
+    }
+}
+
+/* Button enhancements */
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    text-align: center;
+    white-space: nowrap;
+}
+
+@media (max-width: 576px) {
+    .btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 1.4rem;
+        display: block;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Portfolio items */
+.portfolio-item {
+    padding: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .portfolio-item {
+        width: 50%;
+    }
+}
+
+@media (max-width: 576px) {
+    .portfolio-item {
+        width: 100%;
+    }
+}
+
+/* Form adjustments */
+.contact-form .form-item {
+    margin-bottom: 1.5rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.6rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ddd;
+}
+
+textarea.form-control {
+    min-height: 15rem;
+}
 
 /* Back to Top Button */
 
@@ -244,7 +375,7 @@
     width: 46px;
     height: 46px;
 
-    background: transparent;              
+    background: transparent;
     border: 1.5px solid var(--skin-color);
 
     border-radius: 14px;

@@ -25,66 +25,66 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-            // Typing animation
-            new Typed('.typing', {
-                strings: ['Web Developer', 'Python Developer', 'UI/UX Designer', 'Freelancer'],
-                typeSpeed: 100,
-                backSpeed: 60,
-                loop: true
-            });
+    // Typing animation
+    new Typed('.typing', {
+        strings: ['Web Developer', 'Python Developer', 'UI/UX Designer', 'Freelancer'],
+        typeSpeed: 100,
+        backSpeed: 60,
+        loop: true
+    });
 
 
-            // dark and light mode toggle
-            const dayNight = document.querySelector('.day-night');
-            dayNight.addEventListener('click', function () {
-                this.querySelector('i').classList.toggle('fa-sun');
-                this.querySelector('i').classList.toggle('fa-moon');
-                document.body.classList.toggle('dark');
-            });
-        });
-        // Certificate Lightbox
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-        const closeBtn = document.getElementById('lightbox-close');
+    // dark and light mode toggle
+    const dayNight = document.querySelector('.day-night');
+    dayNight.addEventListener('click', function () {
+        this.querySelector('i').classList.toggle('fa-sun');
+        this.querySelector('i').classList.toggle('fa-moon');
+        document.body.classList.toggle('dark');
+    });
+});
+// Certificate Lightbox
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const closeBtn = document.getElementById('lightbox-close');
 
-        document.querySelectorAll('.certificate-img').forEach(img => {
-            img.addEventListener('click', () => {
-                lightboxImg.src = img.src;
-                lightbox.classList.add('active');
-            });
-        });
+document.querySelectorAll('.certificate-img').forEach(img => {
+    img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.classList.add('active');
+    });
+});
 
-        closeBtn.addEventListener('click', () => {
-            lightbox.classList.remove('active');
-        });
+closeBtn.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+});
 
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) {
-                lightbox.classList.remove('active');
-            }
-        });
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+        lightbox.classList.remove('active');
+    }
+});
 
-        // Sticky Aside on Scroll
-        const aside = document.querySelector('.aside');
-        const footer = document.querySelector('.footer');
-        const mainContent = document.querySelector('.main-content');
+// Sticky Aside on Scroll
+const aside = document.querySelector('.aside');
+const footer = document.querySelector('.footer');
+const mainContent = document.querySelector('.main-content');
 
-        window.addEventListener('scroll', () => {
-            const asideHeight = aside.offsetHeight;
-            const footerOffsetTop = footer.offsetTop;
-            const scrollTop = window.scrollY;
+window.addEventListener('scroll', () => {
+    const asideHeight = aside.offsetHeight;
+    const footerOffsetTop = footer.offsetTop;
+    const scrollTop = window.scrollY;
 
-            // distance from top where aside should stop
-            const stopPoint = footerOffsetTop - asideHeight;
+    // distance from top where aside should stop
+    const stopPoint = footerOffsetTop - asideHeight;
 
-            if (scrollTop >= stopPoint) {
-                aside.classList.add('stop');
-            } else {
-                aside.classList.remove('stop');
-            }
-        });
+    if (scrollTop >= stopPoint) {
+        aside.classList.add('stop');
+    } else {
+        aside.classList.remove('stop');
+    }
+});
 
-        // Back to Top Button
+// Back to Top Button
 const backToTop = document.getElementById("backToTop");
 
 window.addEventListener("scroll", () => {
