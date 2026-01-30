@@ -43,28 +43,47 @@
             h4 { font-size: 1.6rem; }
         }
         
-        /* Mobile menu toggle */
-        .nav-toggler {
-            display: none;
-            cursor: pointer;
-            padding: 1rem;
-            position: fixed;
-            right: 2rem;
-            top: 2rem;
-            z-index: 1000;
-            background: rgba(0,0,0,0.7);
-            border-radius: 0.5rem;
-        }
-        
-        .nav-toggler span {
-            display: block;
-            height: 0.2rem;
-            width: 2.5rem;
-            background: #fff;
-            margin: 0.5rem 0;
-            transition: all 0.3s ease;
-        }
-        
+         /* Glassmorphism Nav Toggler */
+.nav-toggler {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    cursor: pointer;
+    z-index: 1000;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-toggler:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.nav-toggler span {
+    width: 22px;
+    height: 2px;
+    background: var(--skin-color);
+    border-radius: 2px;
+    transition: all 0.35s ease;
+}
+
+
         /* Mobile nav styles */
         @media (max-width: 992px) {
             .aside {
@@ -80,10 +99,6 @@
             
             .aside.active {
                 transform: translateX(0);
-            }
-            
-            .nav-toggler {
-                display: block;
             }
             
             .nav-toggler.active span:nth-child(1) {
