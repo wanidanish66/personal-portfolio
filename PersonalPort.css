@@ -1257,7 +1257,7 @@ body.dark .nav-toggler span {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.3) 100%);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 0.3) 100%);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -1286,73 +1286,71 @@ body.dark .nav-toggler span {
     color: rgba(255, 255, 255, 0.85);
     font-size: 14px;
     line-height: 1.5;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     transform: translateY(20px);
     transition: transform 0.4s ease 0.1s;
+}
+
+/* Dual Button Layout */
+.portfolio-links {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+    transform: translateY(20px);
+    transition: transform 0.4s ease 0.2s;
 }
 
 .view-project {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
-    color: var(--skin-color);
-    background: rgba(255, 255, 255, 0.95);
     padding: 10px 20px;
     border-radius: 25px;
     text-decoration: none;
     font-size: 14px;
     font-weight: 600;
-    transform: translateY(20px);
-    transition: all 0.4s ease 0.2s;
+    transition: all 0.3s ease;
     border: 2px solid transparent;
+    flex: 1;
+    white-space: nowrap;
 }
 
-.view-project:hover {
+.github-btn {
+    background: rgba(255, 255, 255, 0.95);
+    color: #24292e;
+    border-color: rgba(255, 255, 255, 0.95);
+}
+
+.github-btn:hover {
+    background: #24292e;
+    color: white;
+    border-color: #24292e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.live-btn {
     background: var(--skin-color);
     color: white;
-    transform: translateY(0) scale(1.05);
+    border-color: var(--skin-color);
+}
+
+.live-btn:hover {
+    background: transparent;
+    color: var(--skin-color);
+    border-color: var(--skin-color);
+    transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .portfolio-item-inner:hover .portfolio-overlay h3,
 .portfolio-item-inner:hover .portfolio-overlay p,
-.portfolio-item-inner:hover .view-project {
+.portfolio-item-inner:hover .portfolio-links {
     transform: translateY(0);
 }
 
-/* Responsive Adjustments */
-@media (max-width: 767px) {
-    .portfolio-item {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
-    
-    .portfolio-overlay {
-        opacity: 1;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 60%, transparent 100%);
-        padding: 20px;
-    }
-    
-    .portfolio-overlay h3,
-    .portfolio-overlay p,
-    .view-project {
-        transform: translateY(0);
-    }
-    
-    .view-project {
-        padding: 8px 16px;
-        font-size: 13px;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-    .portfolio-item {
-        flex: 0 0 50%;
-        max-width: 50%;
-    }
-}
-
-/* Category Tags (Optional enhancement) */
+/* Category Tag */
 .portfolio-overlay::before {
     content: 'Web Project';
     position: absolute;
@@ -1374,4 +1372,40 @@ body.dark .nav-toggler span {
 .portfolio-item-inner:hover .portfolio-overlay::before {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+    .portfolio-item {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .portfolio-overlay {
+        opacity: 1;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.5) 60%, transparent 100%);
+        padding: 20px;
+    }
+
+    .portfolio-overlay h3,
+    .portfolio-overlay p,
+    .portfolio-links {
+        transform: translateY(0);
+    }
+
+    .view-project {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+
+    .portfolio-links {
+        gap: 10px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .portfolio-item {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
 }
